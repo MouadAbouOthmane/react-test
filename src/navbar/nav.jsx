@@ -8,16 +8,16 @@ function Nav() {
     'contact': false,
     'aboutus': false,
   };
-  const [activeList, setActiveList] = {
+  const [activeList, setActiveList] = useState({
     'home': false,
     'store': false,
     'contact': false,
     'aboutus': false,
-  };
+  });
   const listact = (e) => {
-    setActiveList(JSON.parse(JSON.stringify(originList)))
-    activeList[e] = true;
-    console.log(activeList)
+    let tempObject = JSON.parse(JSON.stringify(originList))
+    tempObject[e] = true
+    setActiveList({...tempObject})
   };
 
   return (
